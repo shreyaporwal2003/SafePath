@@ -1,62 +1,107 @@
-# SafeRoadsAI - AI-Powered Pothole Detection & Reporting Platform
+# 🚧 SafeRoadsAI – AI‑Based Pothole Detection & Reporting System
 
-**SafeRoadsAI** is an intelligent pothole detection and reporting platform that leverages AI to identify potholes from user-submitted images or camera feeds. It enables real-time pothole detection with geolocation tagging and seamless reporting to help municipal authorities maintain safer roads. The system empowers both users and administrators through a responsive interface and scalable backend.
+SafeRoadsAI is a full‑stack mobile and web‑based application that uses **Artificial Intelligence (YOLO)** to **detect potholes in real time** and allows users to **report road damage with location and images**.  
+The goal is to help authorities and communities improve road safety through technology.
 
-## Features
+---
 
-- **AI-Based Detection**: Uses computer vision models to detect potholes in real-time.
-- **Geo-tagged Reporting**: Automatically captures user location and submits pothole data to a centralized dashboard.
-- **User-Friendly Interface**: Citizens can easily upload images and report road issues.
-- **Scalable & Secure**: Built with modern tools to ensure fast and safe operations.
+## 📌 Features
 
-## Tech Stack
+### 👤 Authentication
+- User Signup & Login (JWT‑based authentication)
+- Secure token storage on the client
 
-- **Frontend**: React Native (Expo)
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Machine Learning**: Python (OpenCV)
+### 📷 Pothole Reporting
+- Capture or upload pothole images
+- Automatic GPS location detection
+- Store reports with description, image, and coordinates
+- View all reports and report history
 
-## Installation
+### 🤖 AI‑Based Pothole Detection
+- YOLOv8‑based trained pothole detection model
+- Real‑time detection using camera frames
+- Adjustable confidence threshold
+- Detection results returned from Python backend
 
-### Prerequisites
+### 🗺️ Location Support
+- Uses device GPS for latitude & longitude
+- Map view support (optional)
 
-Before you begin, make sure you have the following installed:
+---
 
-- [Node.js](https://nodejs.org/) (v20 or higher)
-- [MongoDB](https://www.mongodb.com/) or a MongoDB Atlas account
-- [Python 3.8+](https://www.python.org/downloads/) for the AI model
-- [Git](https://git-scm.com/)
+## 🧱 Tech Stack
 
-### Steps to Run Locally
+### Frontend (Client)
+- **React Native (Expo)**
+- **TypeScript**
+- Expo Camera & Location
+- Axios
+- Expo Router
 
-1. Clone the repository
-```
-git clone https://github.com/rishvant/Pothole-App
-cd Pothole-App
-```
+### Backend (Server)
+- **Node.js**
+- **Express.js**
+- **MongoDB (Mongoose)**
+- JWT Authentication
+- Multer (Image Uploads)
 
-2. Install Frontend Dependencies
-```
-cd client
-npm install
-```
+### AI / ML Service
+- **Python**
+- **YOLOv8 (Ultralytics)**
+- **FastAPI**
+- OpenCV
+- NumPy
 
-3. Install Backend Dependencies
-```
-cd ../server
-npm install
-```
+---
 
-4. Set Up Environment Variables
+## 📂 Project Structure
 
-5. Run Backend Server
-```
-cd ../server
-node server.js
-```
+SafeRoadsAI-main/
+│
+├── client/ # React Native (Expo) App
+│ ├── app/
+│ │ ├── login.tsx
+│ │ ├── signup.tsx
+│ │ ├── report.tsx
+│ │ ├── registerReport.tsx
+│ │ ├── realtimeDetection.tsx
+│ │ └── (tabs)/
+│ ├── services/
+│ ├── context/
+│ ├── hooks/
+│ └── app.config.js
+│
+├── server/ # Node.js Backend
+│ ├── controllers/
+│ │ ├── AuthController.js
+│ │ └── ReportController.js
+│ ├── routes/
+│ │ ├── authRoutes.js
+│ │ └── reportRoutes.js
+│ ├── models/
+│ │ ├── User.js
+│ │ └── Report.js
+│ ├── middleware/
+│ ├── uploads/
+│ ├── db/
+│ ├── server.js
+│ └── .env
+│
+├── yolo_service/ # AI Detection Service
+│ ├── app.py # FastAPI server
+│ ├── realtime_detection.py # Local camera testing
+│ ├── best.pt # Trained YOLO model
+│ ├── requirements.txt
+│ └── README.md
+│
+└── README.md
 
-6. Run Frontend Server
-```
-cd ../client
-npx expo start
-```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/SafeRoadsAI.git
+cd SafeRoadsAI
