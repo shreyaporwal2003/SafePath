@@ -54,48 +54,6 @@ The goal is to help authorities and communities improve road safety through tech
 
 ---
 
-## 📂 Project Structure
-
-SafeRoadsAI-main/
-│
-├── client/ # React Native (Expo) App
-│ ├── app/
-│ │ ├── login.tsx
-│ │ ├── signup.tsx
-│ │ ├── report.tsx
-│ │ ├── registerReport.tsx
-│ │ ├── realtimeDetection.tsx
-│ │ └── (tabs)/
-│ ├── services/
-│ ├── context/
-│ ├── hooks/
-│ └── app.config.js
-│
-├── server/ # Node.js Backend
-│ ├── controllers/
-│ │ ├── AuthController.js
-│ │ └── ReportController.js
-│ ├── routes/
-│ │ ├── authRoutes.js
-│ │ └── reportRoutes.js
-│ ├── models/
-│ │ ├── User.js
-│ │ └── Report.js
-│ ├── middleware/
-│ ├── uploads/
-│ ├── db/
-│ ├── server.js
-│ └── .env
-│
-├── yolo_service/ # AI Detection Service
-│ ├── app.py # FastAPI server
-│ ├── realtime_detection.py # Local camera testing
-│ ├── best.pt # Trained YOLO model
-│ ├── requirements.txt
-│ └── README.md
-│
-└── README.md
-
 
 ---
 
